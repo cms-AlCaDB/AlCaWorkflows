@@ -24,7 +24,32 @@ workflows[4.1] = ['CRAFT2022', ['HLTPhysics2022', 'HLT_CRAFT22', 'RECO_CRAFT2022
 workflows[4.2] = ['CRAFT2022', ['HLTPhysics2022', 'RECO_CRAFT2022', 'HARVEST_CRAFT22']]
 workflows[4.3] = ['', ['Cosmics2022', 'HLT_CRAFT22', 'RECO_CRAFT2022', 'HARVEST_CRAFT22']]
 workflows[4.4] = ['', ['Cosmics2022', 'RECO_CRAFT2022', 'HARVEST_CRAFT22']]
+workflows[4.5] = ['', ['Cosmics2022', 'HLT_CRAFT22_v2', 'RECO_CRAFT2022_v2', 'HARVEST_CRAFT22_v2']]
+workflows[4.6] = ['', ['Cosmics2022', 'RECO_CRAFT2022_v2', 'HARVEST_CRAFT22_v2']]
 
 
 # MRH Test for Express WF
 workflows[5.1] = ['MRHTest22', ['MinimumBias2021', 'RECO_MRH_Test', 'ALCARECO_MRH_Test']]
+
+
+# Collision 2022
+
+## Dataset v1: 352567
+workflows[6.1] = ['', ['RunHLTPhysics2022A', 'HLT_Collision22_v1', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+workflows[6.2] = ['', ['RunHLTPhysics2022A', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+
+workflows[6.3] = ['', ['RunJetHT2022A', 'HLT_Collision22_v1', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+workflows[6.4] = ['', ['RunJetHT2022A', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+
+workflows[6.5] = ['', ['RunZeroBias2022A', 'HLT_Collision22_v1', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+workflows[6.6] = ['', ['RunZeroBias2022A', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+
+## Dataset v2: 353060
+workflows[6.7] = ['', ['RunHLTPhysics2022A_v2', 'HLT_Collision22_v1', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+workflows[6.8] = ['', ['RunHLTPhysics2022A_v2', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+
+workflows[6.11] = ['', ['RunZeroBias2022A_v2', 'HLT_Collision22_v1', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+workflows[6.12] = ['', ['RunZeroBias2022A_v2', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+
+workflows[6.13] = ['', ['RunMinimumBias2022A_v2', 'HLT_Collision22_v1', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
+workflows[6.14] = ['', ['RunMinimumBias2022A_v2', 'RECO_Collision22_v1', 'HARVEST_Collision22_v1']]
