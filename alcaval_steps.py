@@ -37,11 +37,18 @@ steps['HLT_PBT2021'] = merge( [ {'-s':'L1REPACK,HLT:GRun',},
                                 step2Defaults ] )
 
 # Cosmics
-steps['HLT_CRUZET2021'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVTDEBUG', 
+steps['HLT_CRUZET2021'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVTDEBUGHLT', 
                                     '--eventcontent': 'FEVTDEBUG', '--magField': '0T'}, step2Defaults] )
 steps['HLT_MWGR2022'] = merge( [ steps['HLT_CRUZET2021'] ] )
-steps['HLT_CRAFT22'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVTDEBUG', '--eventcontent': 'FEVTDEBUG'}, step2Defaults] )
-
+steps['HLT_CRAFT22'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVTDEBUGHLT',
+				'--eventcontent': 'FEVTDEBUG',
+				'--customise': 'L1Trigger/Configuration/customiseUtils.L1TGlobalMenuXML'
+				}, step2Defaults] )
+steps['HLT_CRAFT22_v2'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVTDEBUGHLT',
+				'--eventcontent': 'FEVTDEBUG',
+				'-s': 'L1REPACK:uGT,HLT',
+				'--customise': 'L1Trigger/Configuration/customiseUtils.L1TGlobalMenuXML'
+				}, step2Defaults] )
 
 # Step3 RECO: for run3
 step3Defaults = {
@@ -77,6 +84,10 @@ steps['RECO_CRUZET2021']=merge([{'--scenario':'cosmics',
                               )
 steps['RECO_MWGR2022']=merge([ steps['RECO_CRUZET2021'] ])
 steps['RECO_CRAFT2022']=merge([{'--scenario':'cosmics', '-s' : 'RAW2DIGI,L1Reco,RECO,DQM'},step3Defaults])
+steps['RECO_CRAFT2022_v2']=merge([{'--scenario':'cosmics',
+				'-s' : 'RAW2DIGI,L1Reco,RECO,DQM',
+				'--customise': 'Configuration/DataProcessing/RecoTLR.customiseCosmicData',
+				},step3Defaults])
 steps['RECO_MRH_Test']=merge([{'-s': 'RAW2DIGI,L1Reco,RECO,ALCAPRODUCER:SiStripCalMinBiasAAG,ENDJOB',
                                 '--conditions'  : '123X_dataRun3_Express_MRH_harvest_test',
                                 '--datatier' : 'ALCARECO', '--eventcontent': 'ALCARECO',
@@ -100,6 +111,7 @@ steps['ALCARECO_MRH_Test']=merge([{'-s': 'ALCAOUTPUT:SiStripCalMinBiasAAG,ALCA:P
                                     '--data'     : '',
                                     '--triggerResultsProcess': 'RECO'
                                     }])
+
 # Step4 HARVESTING
 steps['HARVESTDefault']={'-s':'HARVESTING:dqmHarvesting',
                    '--conditions':'auto:run3_data',
@@ -116,3 +128,27 @@ steps['HARVEST_PBT2021'] = merge([ steps['HARVESTDefault'] ])
 steps['HARVEST_CRUZET2021'] = merge([ {'--scenario':'cosmics'}, steps['HARVESTDefault'] ])
 steps['HARVEST_MWGR2022'] = merge([ {'--scenario':'cosmics'}, steps['HARVESTDefault'] ])
 steps['HARVEST_CRAFT22'] = merge([ {'--scenario':'cosmics'}, steps['HARVESTDefault'] ])
+steps['HARVEST_CRAFT22_v2'] = merge([ {'--scenario':'cosmics',
+				'--customise': 'Configuration/DataProcessing/RecoTLR.customiseCosmicData',
+				}, steps['HARVESTDefault'] ])
+
+# Collision 2022
+steps['RunHLTPhysics2022A']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
+steps['RunJetHT2022A']={'INPUT':InputInfo(dataSet='/JetHT/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
+steps['RunZeroBias2022A']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
+steps['RunMinimumBias2022A']={'INPUT':InputInfo(dataSet='/MinimumBias/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
+
+steps['RunHLTPhysics2022A_v2']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022A-v1/RAW',ls={353060: [[1,500]]})}
+steps['RunZeroBias2022A_v2']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022A-v1/RAW',ls={353060: [[1,500]]})}
+steps['RunMinimumBias2022A_v2']={'INPUT':InputInfo(dataSet='/MinimumBias/Run2022A-v1/RAW',ls={353060: [[1,500]]})}
+
+steps['HLT_Collision22_v1'] = merge( [ {
+                '-s': 'L1REPACK:uGT,HLT',
+                '--customise': 'L1Trigger/Configuration/customiseUtils.L1TGlobalMenuXML'
+                }, step2Defaults] )
+steps['RECO_Collision22_v1']=merge([{
+                            '-s'            : 'RAW2DIGI,L1Reco,RECO,DQM'},
+                            {'--procModifiers'  : 'siPixelQualityRawToDigi'},
+                            {'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run3,RecoLocalCalo/Configuration/customiseHBHEreco.hbheUseM0FullRangePhase1'},
+                            step3Defaults])
+steps['HARVEST_Collision22_v1'] = merge([ steps['HARVESTDefault'] ])
