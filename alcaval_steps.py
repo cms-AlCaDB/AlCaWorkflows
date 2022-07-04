@@ -19,6 +19,7 @@ steps['HcalNZS2022']={'INPUT':InputInfo(dataSet='/HcalNZS/Commissioning2022-v1/R
 # CRAFT 2022
 steps['HLTPhysics2022']={'INPUT':InputInfo(dataSet='/HLTPhysics/Commissioning2022-v1/RAW',ls={348338: [[1,180]]})}
 steps['Cosmics2022']={'INPUT':InputInfo(dataSet='/Cosmics/Commissioning2022-v1/RAW',ls={349840: [[1,2000]]})}
+steps['Cosmics2022_v2']={'INPUT':InputInfo(dataSet='/Cosmics/Commissioning2022-v1/RAW',ls={348773: [[1,3222]]})}
 
 # Step2 HLT: for run3
 step2Defaults = {'--process':'reHLT',
@@ -138,9 +139,12 @@ steps['RunJetHT2022A']={'INPUT':InputInfo(dataSet='/JetHT/Run2022A-v1/RAW',ls={3
 steps['RunZeroBias2022A']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
 steps['RunMinimumBias2022A']={'INPUT':InputInfo(dataSet='/MinimumBias/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
 
-steps['RunHLTPhysics2022A_v2']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022A-v1/RAW',ls={353060: [[1,500]]})}
-steps['RunZeroBias2022A_v2']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022A-v1/RAW',ls={353060: [[1,500]]})}
-steps['RunMinimumBias2022A_v2']={'INPUT':InputInfo(dataSet='/MinimumBias/Run2022A-v1/RAW',ls={353060: [[1,500]]})}
+steps['RunHLTPhysics2022A_v2']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022A-v1/RAW',ls={353060: [[15,500]]})}
+steps['RunZeroBias2022A_v2']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022A-v1/RAW',ls={353060: [[15,500]]})}
+steps['RunMinimumBias2022A_v2']={'INPUT':InputInfo(dataSet='/MinimumBias/Run2022A-v1/RAW',ls={353060: [[15,500]]})}
+steps['RunEGamma2022A_v2']={'INPUT':InputInfo(dataSet='/EGamma/Run2022A-v1/RAW',ls={353060: [[15,1278]]})}
+steps['RunJetHT2022A_v2']={'INPUT':InputInfo(dataSet='/JetHT/Run2022A-v1/RAW',ls={353060: [[15,1278]]})}
+steps['RunMET2022A_v2']={'INPUT':InputInfo(dataSet='/MET/Run2022A-v1/RAW',ls={353060: [[15,1278]]})}
 
 steps['HLT_Collision22_v1'] = merge( [ {
                 '-s': 'L1REPACK:uGT,HLT',
@@ -148,7 +152,6 @@ steps['HLT_Collision22_v1'] = merge( [ {
                 }, step2Defaults] )
 steps['RECO_Collision22_v1']=merge([{
                             '-s'            : 'RAW2DIGI,L1Reco,RECO,DQM'},
-                            {'--procModifiers'  : 'siPixelQualityRawToDigi'},
-                            {'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run3,RecoLocalCalo/Configuration/customiseHBHEreco.hbheUseM0FullRangePhase1'},
+                            {'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run3'},
                             step3Defaults])
 steps['HARVEST_Collision22_v1'] = merge([ steps['HARVESTDefault'] ])
