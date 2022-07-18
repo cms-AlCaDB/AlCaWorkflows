@@ -133,7 +133,7 @@ steps['HARVEST_CRAFT22_v2'] = merge([ {'--scenario':'cosmics',
 				'--customise': 'Configuration/DataProcessing/RecoTLR.customiseCosmicData',
 				}, steps['HARVESTDefault'] ])
 
-# Collision 2022
+# Collision 2022A
 steps['RunHLTPhysics2022A']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
 steps['RunJetHT2022A']={'INPUT':InputInfo(dataSet='/JetHT/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
 steps['RunZeroBias2022A']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
@@ -145,6 +145,11 @@ steps['RunMinimumBias2022A_v2']={'INPUT':InputInfo(dataSet='/MinimumBias/Run2022
 steps['RunEGamma2022A_v2']={'INPUT':InputInfo(dataSet='/EGamma/Run2022A-v1/RAW',ls={353060: [[15,1278]]})}
 steps['RunJetHT2022A_v2']={'INPUT':InputInfo(dataSet='/JetHT/Run2022A-v1/RAW',ls={353060: [[15,1278]]})}
 steps['RunMET2022A_v2']={'INPUT':InputInfo(dataSet='/MET/Run2022A-v1/RAW',ls={353060: [[15,1278]]})}
+#---------------------------------------------------------------------------------------------------
+
+
+# Collision 2022B
+steps['RunJetHT2022B_v1']={'INPUT':InputInfo(dataSet='/JetHT/Run2022B-v1/RAW',ls={355207: [[1,749]]})}
 
 steps['HLT_Collision22_v1'] = merge( [ {
                 '-s': 'L1REPACK:uGT,HLT',
@@ -155,3 +160,16 @@ steps['RECO_Collision22_v1']=merge([{
                             {'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run3'},
                             step3Defaults])
 steps['HARVEST_Collision22_v1'] = merge([ steps['HARVESTDefault'] ])
+#---------------------------------------------------------------------------------------------------
+
+
+# Collision 2022B V2: 18th July 22 After CMSSW_12_4_3
+steps['RunZeroBias2022B_v1']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022B-v1/RAW',ls={355558: [[122,409]]})}
+
+steps['HLT_Collision22_v2'] = step2Defaults
+steps['RECO_Collision22_v2']=merge([{
+                            '-s'            : 'RAW2DIGI,L1Reco,RECO,DQM'},
+                            {'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run3'},
+                            step3Defaults])
+steps['HARVEST_Collision22_v2'] = merge([ steps['HARVESTDefault'] ])
+#---------------------------------------------------------------------------------------------------
