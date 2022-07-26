@@ -88,7 +88,10 @@ workflows[6.26] = ['', ['RunZeroBias2022B_v1', 'RECO_Collision22_v2', 'HARVEST_C
 workflows[6.27] = ['', ['RunHLTPhysics2022B_v1', 'HLT_Collision22_v2', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 workflows[6.28] = ['', ['RunHLTPhysics2022B_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 
-workflows[6.29] = ['', ['RunEGamma2022B_v1', 'HLT_Collision22_v2', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
-workflows[6.31] = ['', ['RunEGamma2022B_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.31] = ['', ['RunEGamma2022B_v1', 'HLT_Collision22_v2', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.32] = ['', ['RunEGamma2022B_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+
+workflows[6.33] = ['', ['RunJetHT2022B_v2', 'HLT_Collision22_v2', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.34] = ['', ['RunJetHT2022B_v2', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 
 #-----------------------------------------------------------------------------------------------------------------
