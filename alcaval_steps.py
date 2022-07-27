@@ -167,7 +167,6 @@ steps['HARVEST_Collision22_v1'] = merge([ steps['HARVESTDefault'] ])
 steps['RunZeroBias2022B_v1']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2022B-v1/RAW',ls={355558: [[122,409]]})}
 steps['RunHLTPhysics2022B_v1']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022B-v1/RAW',ls={355558: [[122,409]]})}
 steps['RunEGamma2022B_v1']={'INPUT':InputInfo(dataSet='/EGamma/Run2022B-v1/RAW',ls={355558: [[122,409]]})}
-steps['RunJetHT2022B_v2']={'INPUT':InputInfo(dataSet='/JetHT/Run2022B-v1/RAW',ls={356005: [[1,202]]})}
 
 steps['HLT_Collision22_v2'] = step2Defaults
 steps['RECO_Collision22_v2']=merge([{
@@ -175,4 +174,8 @@ steps['RECO_Collision22_v2']=merge([{
                             {'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run3'},
                             step3Defaults])
 steps['HARVEST_Collision22_v2'] = merge([ steps['HARVESTDefault'] ])
+
+# Collision 2022C
+steps['RunJetHT2022C_v1']={'INPUT':InputInfo(dataSet='/JetHT/Run2022C-v1/RAW',ls={356005: [[1,202]]})}
+
 #---------------------------------------------------------------------------------------------------
