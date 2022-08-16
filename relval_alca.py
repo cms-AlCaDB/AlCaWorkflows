@@ -97,4 +97,9 @@ workflows[6.34] = ['', ['RunJetHT2022C_v1', 'RECO_Collision22_v2', 'HARVEST_Coll
 
 workflows[6.35] = ['', ['RunEGamma2022C_v1', 'HLT_Collision22_v2', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 workflows[6.36] = ['', ['RunEGamma2022C_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+
+#-----------------------------------------------------------------------------------------------------------------
+# HLT:Custom menu
+
+workflows[6.37] = ['', ['RunEGamma2022C_v1', 'HLT_Collision22_v3', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 #-----------------------------------------------------------------------------------------------------------------
