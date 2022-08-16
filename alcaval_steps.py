@@ -180,3 +180,6 @@ steps['RunJetHT2022C_v1']={'INPUT':InputInfo(dataSet='/JetHT/Run2022C-v1/RAW',ls
 steps['RunEGamma2022C_v1']={'INPUT':InputInfo(dataSet='/EGamma/Run2022C-v1/RAW',ls={356005: [[1,202]]})}
 
 #---------------------------------------------------------------------------------------------------
+# Collision 2022C: HLT:Custom menu
+steps['HLT_Collision22_v3']=merge( [ {'-s': 'L1REPACK,HLT:Custom'}, step2Defaults] )
+#---------------------------------------------------------------------------------------------------
