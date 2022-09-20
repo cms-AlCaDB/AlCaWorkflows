@@ -181,5 +181,9 @@ steps['RunEGamma2022C_v1']={'INPUT':InputInfo(dataSet='/EGamma/Run2022C-v1/RAW',
 
 #---------------------------------------------------------------------------------------------------
 # Collision 2022C: HLT:Custom menu
+steps['RunHLTPhysics22D_v1']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022D-v1/RAW',ls={357612: [[1,200]]})}
+steps['RunMuon22D_v1']={'INPUT':InputInfo(dataSet='/Muon/Run2022D-v1/RAW',ls={357899: [[1,200]]})}
+steps['RunJetMET22D_v1']={'INPUT':InputInfo(dataSet='/JetMET/Run2022C-v1/RAW',ls={357442: [[1,200]]})}
+
 steps['HLT_Collision22_v3']=merge( [ {'-s': 'L1REPACK,HLT:Custom'}, step2Defaults] )
 #---------------------------------------------------------------------------------------------------

@@ -102,4 +102,12 @@ workflows[6.36] = ['', ['RunEGamma2022C_v1', 'RECO_Collision22_v2', 'HARVEST_Col
 # HLT:Custom menu
 
 workflows[6.37] = ['', ['RunEGamma2022C_v1', 'HLT_Collision22_v3', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.39] = ['', ['RunHLTPhysics22D_v1', 'HLT_Collision22_v3', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.41] = ['', ['RunMuon22D_v1', 'HLT_Collision22_v3', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.43] = ['', ['RunJetMET22D_v1', 'HLT_Collision22_v3', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+#-----------------------------------------------------------------------------------------------------------------
+# To be used in HCAL FTV: CMSALCA-182
+workflows[6.44] = ['', ['RunHLTPhysics22D_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.46] = ['', ['RunMuon22D_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+workflows[6.48] = ['', ['RunJetMET22D_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 #-----------------------------------------------------------------------------------------------------------------
