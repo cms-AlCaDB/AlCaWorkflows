@@ -111,3 +111,6 @@ workflows[6.44] = ['', ['RunHLTPhysics22D_v1', 'RECO_Collision22_v2', 'HARVEST_C
 workflows[6.46] = ['', ['RunMuon22D_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 workflows[6.48] = ['', ['RunJetMET22D_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 #-----------------------------------------------------------------------------------------------------------------
+# With 'reHLT' process in RECO step for HLT workflow: 28th Sep 22
+workflows[6.51] = ['', ['RunEGamma2022C_v1', 'HLT_Collision22_v2', 'RECO_Collision22_v3', 'HARVEST_Collision22_v2']]
+workflows[6.52] = ['', ['RunEGamma2022C_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
