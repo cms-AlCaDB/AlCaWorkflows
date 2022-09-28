@@ -190,7 +190,7 @@ steps['HLT_Collision22_v3']=merge( [ {'-s': 'L1REPACK,HLT:Custom'}, step2Default
 # 28 Sep 2022: Corrected process name to be used after 6.51, 6.52
 steps['RECO_Collision22_v3']=merge([{
                             '-s'            : 'RAW2DIGI,L1Reco,RECO,DQM',
-                            '--process'     : 'reHLT',
+                            '--hltProcess'     : 'reHLT',
                             },
                             {'--customise':'Configuration/DataProcessing/RecoTLR.customisePostEra_Run3'},
                             step3Defaults])
