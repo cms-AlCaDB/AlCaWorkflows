@@ -116,5 +116,5 @@ workflows[6.51] = ['', ['RunEGamma2022C_v1', 'HLT_Collision22_v2', 'RECO_Collisi
 workflows[6.52] = ['', ['RunEGamma2022C_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
 
 # For CRAFT 2023
-workflows[4.53] = ['', ['Cosmics2023_v1', 'HLT_CRAFT23_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
-workflows[4.54] = ['', ['Cosmics2023_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
+workflows[6.53] = ['', ['Cosmics2023_v1', 'HLT_CRAFT23_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
+workflows[6.54] = ['', ['Cosmics2023_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
