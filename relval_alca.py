@@ -114,3 +114,7 @@ workflows[6.48] = ['', ['RunJetMET22D_v1', 'RECO_Collision22_v2', 'HARVEST_Colli
 # With 'reHLT' process in RECO step for HLT workflow: 28th Sep 22
 workflows[6.51] = ['', ['RunEGamma2022C_v1', 'HLT_Collision22_v2', 'RECO_Collision22_v3', 'HARVEST_Collision22_v2']]
 workflows[6.52] = ['', ['RunEGamma2022C_v1', 'RECO_Collision22_v2', 'HARVEST_Collision22_v2']]
+
+# For CRAFT 2023
+workflows[4.53] = ['', ['Cosmics2023_v1', 'HLT_CRAFT23_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
+workflows[4.54] = ['', ['Cosmics2023_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
