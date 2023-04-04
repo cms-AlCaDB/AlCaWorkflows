@@ -196,3 +196,19 @@ steps['RECO_Collision22_v3']=merge([{
                             step3Defaults])
 
 #---------------------------------------------------------------------------------------------------
+# CRAFT 2023
+steps['Cosmics2023_v1']={'INPUT':InputInfo(dataSet='/MinimumBias/Commissioning2023-v2/RAW',ls={365118: [[1,500]]})}
+steps['HLT_CRAFT23_v1'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVTDEBUGHLT',
+				'--eventcontent': 'FEVTDEBUG',
+				'-s': 'L1REPACK:uGT,HLT',
+				}, step2Defaults] )
+steps['RECO_CRAFT2023_v1']=merge([{'--scenario':'cosmics',
+				'-s' : 'RAW2DIGI,L1Reco,RECO,DQM',
+				'--customise': 'Configuration/DataProcessing/RecoTLR.customiseCosmicData',
+				},step3Defaults])
+steps['HARVEST_CRAFT23_v1'] = merge([ {'--scenario':'cosmics',
+				'--customise': 'Configuration/DataProcessing/RecoTLR.customiseCosmicData',
+				}, steps['HARVESTDefault'] ])
+#---------------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------------------
