@@ -210,5 +210,32 @@ steps['HARVEST_CRAFT23_v1'] = merge([ {'--scenario':'cosmics',
 				'--customise': 'Configuration/DataProcessing/RecoTLR.customiseCosmicData',
 				}, steps['HARVESTDefault'] ])
 #---------------------------------------------------------------------------------------------------
+# PPS JUNE 2023
+steps['TIER0EXPPPSCALRUN3']={'-s':'RAW2DIGI,L1Reco,ALCAPRODUCER:PPSCalMaxTracks,ENDJOB',
+                          '-n':1000,
+                          '--process':'ALCARECO',
+                          '--scenario': 'pp',
+                          '--era':'Run3',
+                          '--conditions':'auto:run3_data_express',
+                          '--data': '',
+                          '--datatier':'ALCARECO',
+                          '--eventcontent':'ALCARECO',
+                          }
+steps['ALCASPLITPPSCALRUN3']={'-s':'ALCAOUTPUT:PPSCalMaxTracks,ALCA:PromptCalibProdPPSTimingCalib',
+			 '-n':1000,
+                        '--scenario':'pp',
+                        '--data':'',
+                        '--era':'Run3',
+                        '--datatier':'ALCARECO',
+                        '--eventcontent':'ALCARECO',
+                        '--conditions':'auto:run3_data_express',
+                        '--triggerResultsProcess':'ALCARECO',
+                        }
 
+steps['ALCAHARVDPPSCALRUN3']={'-s':'ALCAHARVEST:%s'%(autoPCL['PromptCalibProdPPSTimingCalib']),
+                        '--conditions':'auto:run3_data_express',
+                        '--scenario':'pp',
+                        '--data':'',
+                        '--era':'Run3',
+                        '--filein':'file:ALCARECOStreamPromptCalibProdPPSTimingCalib.root'}
 #---------------------------------------------------------------------------------------------------
