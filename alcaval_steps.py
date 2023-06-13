@@ -232,7 +232,7 @@ steps['ALCASPLITPPSCALRUN3']={'-s':'ALCAOUTPUT:PPSCalMaxTracks,ALCA:PromptCalibP
                         '--triggerResultsProcess':'ALCARECO',
                         }
 
-steps['ALCAHARVDPPSCALRUN3']={'-s':'ALCAHARVEST:%s'%(autoPCL['PromptCalibProdPPSTimingCalib']),
+steps['ALCAHARVDPPSCALRUN3']={'-s':'ALCAHARVEST:PPSTimingCalibration',
                         '--conditions':'auto:run3_data_express',
                         '--scenario':'pp',
                         '--data':'',
