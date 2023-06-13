@@ -118,3 +118,7 @@ workflows[6.52] = ['', ['RunEGamma2022C_v1', 'RECO_Collision22_v2', 'HARVEST_Col
 # For CRAFT 2023
 workflows[6.53] = ['', ['Cosmics2023_v1', 'HLT_CRAFT23_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
 workflows[6.54] = ['', ['Cosmics2023_v1', 'RECO_CRAFT2023_v1', 'HARVEST_CRAFT23_v1']]
+
+#-----------------------------------------------------------------------------------------------------------------
+# PPS JUNE 2023 (Prompt)
+workflows[6.56] = ['',['Cosmics2023_v1','TIER0EXPPPSCALRUN3','ALCASPLITPPSCALRUN3','ALCAHARVDPPSCALRUN3']]
