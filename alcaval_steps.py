@@ -21,6 +21,9 @@ steps['HLTPhysics2022']={'INPUT':InputInfo(dataSet='/HLTPhysics/Commissioning202
 steps['Cosmics2022']={'INPUT':InputInfo(dataSet='/Cosmics/Commissioning2022-v1/RAW',ls={349840: [[1,2000]]})}
 steps['Cosmics2022_v2']={'INPUT':InputInfo(dataSet='/Cosmics/Commissioning2022-v1/RAW',ls={348773: [[1,3222]]})}
 
+# HI 2023
+steps['HIRawPrime2023']={'INPUT':InputInfo(dataSet='/HIPhysicsRawPrime0/HIRun2023A-v1/RAW',ls={375491: [[100,100]]})}
+
 # Step2 HLT: for run3
 step2Defaults = {'--process':'reHLT',
                       '-s':'L1REPACK,HLT',
@@ -50,6 +53,13 @@ steps['HLT_CRAFT22_v2'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVT
 				'-s': 'L1REPACK:uGT,HLT',
 				'--customise': 'L1Trigger/Configuration/customiseUtils.L1TGlobalMenuXML'
 				}, step2Defaults] )
+
+# HI
+steps['HLT_HI2023'] = merge( [ {'-s':'L1REPACK,HLT:HIon',
+                                '--conditions':'auto:run3_hlt_HIon',
+                                '--era' : 'Run3_pp_on_PbPb_approxSiStripClusters_2023',
+                                '--customise' : 'HLTrigger/Configuration/CustomConfigs.customiseL1THLTforHIonRepackedRAWPrime'
+                                }, step2Defaults] )
 
 # Step3 RECO: for run3
 step3Defaults = {
@@ -113,6 +123,13 @@ steps['ALCARECO_MRH_Test']=merge([{'-s': 'ALCAOUTPUT:SiStripCalMinBiasAAG,ALCA:P
                                     '--triggerResultsProcess': 'RECO'
                                     }])
 
+# HI
+steps['RECO_HI2023']=merge([{'-s' : 'RAW2DIGI,L1Reco,RECO,DQM',
+                             '--era' : 'Run3_pp_on_PbPb_approxSiStripClusters_2023',
+                             '--conditions' : 'auto:run3_data_HIon',
+                             '--hltProcess' : 'reHLT'},
+                            step3Defaults])
+
 # Step4 HARVESTING
 steps['HARVESTDefault']={'-s':'HARVESTING:dqmHarvesting',
                    '--conditions':'auto:run3_data',
@@ -133,6 +150,10 @@ steps['HARVEST_CRAFT22_v2'] = merge([ {'--scenario':'cosmics',
 				'--customise': 'Configuration/DataProcessing/RecoTLR.customiseCosmicData',
 				}, steps['HARVESTDefault'] ])
 
+# HI
+steps['HARVEST_HI2023'] = merge([ {'--era':'Run3_pp_on_PbPb_approxSiStripClusters_2023', '--conditions' : 'auto:run3_data_HIon'}, steps['HARVESTDefault'] ])
+
+#----------------------------------------------------------------------------------------------------------------
 # Collision 2022A
 steps['RunHLTPhysics2022A']={'INPUT':InputInfo(dataSet='/HLTPhysics/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
 steps['RunJetHT2022A']={'INPUT':InputInfo(dataSet='/JetHT/Run2022A-v1/RAW',ls={352567: [[1,126]]})}
