@@ -127,3 +127,10 @@ workflows[6.56] = ['',['Cosmics2023_v1','TIER0EXPPPSCALRUN3','ALCASPLITPPSCALRUN
 # HI 2023
 workflows[6.57] = ['',['HIRawPrime2023','HLT_HI2023','RECO_HI2023','HARVEST_HI2023']]
 workflows[6.58] = ['',['HIRawPrime2023','RECO_HI2023','HARVEST_HI2023']]
+
+#----------------------------------------------------------------------------------------------------------------
+# PPS PCL Workflows
+workflows[6.62] = ['',['RunRawPPS2023D','TIER0EXPPPSCALRUN3','ALCASPLITPPSCALSAMPIC','ALCAHARVDPPSCALSAMPIC']]  # same as the official workflow 1043
+workflows[6.64] = ['',['RunRawPPS2023D','TIER0EXPPPSCALRUN3','ALCASPLITPPSCALRUN3','ALCAHARVDPPSCALRUN3']]      # same as the official workflow 1044
+workflows[6.66] = ['',['RunRawPPS2023D','TIER0EXPPPSCALRUN3','ALCASPLITPPSALIGRUN3','ALCAHARVDPPSALIGRUN3']]    # same as the official workflow 1045
+
