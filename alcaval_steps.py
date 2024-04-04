@@ -26,7 +26,7 @@ steps['HIRawPrime2023']={'INPUT':InputInfo(dataSet='/HIPhysicsRawPrime0/HIRun202
 
 # Step2 HLT: for run3
 step2Defaults = {'--process':'reHLT',
-                      '-s':'L1REPACK,HLT',
+                      '-s':'L1REPACK:Full,HLT',
                       '--conditions':'auto:run3_data',
                       '--data':'',
                       '--eventcontent': 'FEVTDEBUGHLT',
@@ -55,7 +55,7 @@ steps['HLT_CRAFT22_v2'] = merge( [ {'--scenario': 'cosmics', '--datatier': 'FEVT
 				}, step2Defaults] )
 
 # HI
-steps['HLT_HI2023'] = merge( [ {'-s':'L1REPACK,HLT:HIon',
+steps['HLT_HI2023'] = merge( [ {'-s':'L1REPACK:Full,HLT:HIon',
                                 '--conditions':'auto:run3_hlt_HIon',
                                 '--era' : 'Run3_pp_on_PbPb_approxSiStripClusters_2023',
                                 '--customise' : 'HLTrigger/Configuration/CustomConfigs.customiseL1THLTforHIonRepackedRAWPrime'
